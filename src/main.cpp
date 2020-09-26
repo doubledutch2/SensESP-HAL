@@ -22,7 +22,7 @@ ReactESP app([]() {
   delay(100);
   debugI("Serial debug enabled");
 
-  sensesp_app = new SensESPApp(noStdSensors);
+  sensesp_app = new SensESPApp("SensESP","","","",0,NONE);
 
   // The "SignalK path" identifies the output of the sensor to the SignalK network.
   // If you have multiple sensors connected to your microcontoller (ESP), each one of them
@@ -64,7 +64,7 @@ ReactESP app([]() {
 // transform takes a number of pulses and converts that into
 // a frequency. The sample multiplier converts the 97 tooth
 // tach output into Hz, SK native units.
-const float multiplier = 1.0 / 97.0;
+const float multiplier = 1.0 / 4.0; // 4 Pulses per revolution
 const uint read_delay = 500;
 
 
